@@ -2,6 +2,12 @@ const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const CopyPlugin = require("copy-webpack-plugin");
+
+const assetsPath = "../assets/";
+const srcPath = "src/Components/";
+const publicPath = "public/assets/";
+
 module.exports = {
   mode: "development",
   entry: path.resolve(__dirname, "src/index.js"),
@@ -62,6 +68,12 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "assets/css/bundle.css",
       ignoreOrder: false,
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: publicPath + "img", to: assetsPath + "img" },
+        { from: srcPath + "img", to: assetsPath + "image" },
+      ],
     }),
   ],
 };
