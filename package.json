@@ -4,14 +4,8 @@
   "description": "Web Front EngineLand with Svelte",
   "main": "./src/index.js",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack --open --mode development",
-    "prod": "webpack --config webpack.prod.js",
-    "view": "webpack webpack-dev-server --open --config ./webpack/webpack.dev.js",
-    "build:init": "webpack --config ./webpack/webpack.init.js",
-    "build:prod": "webpack --config ./webpack/webpack.prod.js",
-    "build:dev": "webpack --open --config ./webpack/webpack.dev.js",
-    "build:serv": "webpack-dev-server --open --mode development"
+    "build": "webpack --mode development",
+    "prod": "webpack --config webpack.prod.js"
   },
   "keywords": [
     "Svelte",
